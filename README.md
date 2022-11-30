@@ -1,6 +1,6 @@
 # COMP-5710 SQA Fall 2022
 ### Taint Trackers:
-Bryan Fuller - Zachary Hineman
+Brian Fuller - Zachary Hineman
 
 ## Progress Checklist:
 - [x] Repo setup and project initialization (5%)
