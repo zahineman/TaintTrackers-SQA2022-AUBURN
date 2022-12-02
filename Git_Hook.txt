@@ -7,7 +7,7 @@
 #
 # To enable this hook, rename this file to "Git_Hook".
 
-bandit -r -a file -f csv -o Security_Weaknesses
+bandit -r -f "csv" -o "Security_Weaknesses" 
 
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
