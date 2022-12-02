@@ -1,4 +1,5 @@
 SQA Project Report
+
 Team Name: Taint Trackers
 Group Members: Brian Fuller, Zachary Hineman 
 
@@ -7,8 +8,7 @@ Git Hook
 Git hooks are executed before and after events like commits and pushes. We used the pre-commit hook. It is able to automatically report security weaknesses when a Python file is changed and committed. Git hooks allow for automating tasks for whole projects making it a very useful tool. 
 
 Fuzzing 
-
+We created a fuzz.py file where an array of values of varying data types was created. Importing 5 methods from knn.py, the array was used to run for loops and try-catch statements for each of the 5 methods to detect thrown errors. This was helpful in highlighting how potential code vulnerabilities can be taken advantage of and why verifying the integrity of your inputs is important.
 
 Forensics 
 The file knn.py had 5 methods modified which were euc_dist, predict, calculate_k, calculate_metrics, and perform_inference. Our logger is able to capture the information from each method and then output it.
-
