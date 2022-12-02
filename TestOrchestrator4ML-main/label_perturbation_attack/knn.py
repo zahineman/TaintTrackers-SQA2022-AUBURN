@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 alert_logger = logging.getLoggerObj 
 
 def euc_dist(x1, x2):
-    
+    # placing logger
     alert_logger.info(f"euc_dist({x1}, {x2}")
 
     return np.sqrt(np.sum((x1-x2)**2))
@@ -28,7 +28,7 @@ def predict(self, X_test):
     Get the most frequent class of these rows
     Return the predicted class
     """
-
+    # placing logger
     alert_logger.info(f"predict({self}, {X_test}")
 
     predictions = [] 
@@ -76,6 +76,9 @@ def calculate_k(X_train, X_test, y_train, y_test):
     """
     Training our model on all possible K values (odd) from 3 to 10  
     """
+    # placing logger
+    alert_logger.info(f"predict({X_train}, {X_test}, {y_train}, {y_test}")
+
     kVals = np.arange(3,10,2)
     accuracies = []
     for k in kVals:
@@ -100,6 +103,9 @@ def calculate_metrics(k, X_train, y_train):
     """
     Checking for Precision, Recall and F-score for the most accurate K value
     """
+    # placing logger
+    alert_logger.info(f"predict({k}, {X_train}, {y_train}")
+
     model = KNeighborsClassifier(n_neighbors = k)
     model.fit(X_train, y_train) 
     pred = model.predict(X_train)
@@ -118,6 +124,9 @@ def perform_inference(k, X_train, X_test, y_train, y_test):
     """
     Performing inference of the trained model on the testing set:
     """
+    # placing logger
+    alert_logger.info(f"predict({k}, {X_train}, {X_test}, {y_train}, {y_test}")
+
     model = KNeighborsClassifier(n_neighbors = k)
     model.fit(X_train, y_train)
     pred = model.predict(X_test)
