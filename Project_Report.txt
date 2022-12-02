@@ -10,5 +10,5 @@ Fuzzing
 
 
 Forensics 
-The file knn.py had 5 methods modified which were
+The file knn.py had 5 methods modified which were euc_dist, predict, calculate_k, calculate_metrics, and perform_inference. Our logger is able to capture the information from each method and then output it.
 
