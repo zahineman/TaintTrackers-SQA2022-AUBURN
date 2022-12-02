@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import logging  
 import operator 
 from operator import itemgetter
 from sklearn.datasets import load_digits
@@ -10,10 +11,14 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_curve, auc
 from matplotlib import pyplot as plt
 
+alert_logger = logging.getLoggerObj 
 
 def euc_dist(x1, x2):
+    
+    alert_logger.info(f"euc_dist({x1}, {x2}")
+
     return np.sqrt(np.sum((x1-x2)**2))
-        
+
 
 def predict(self, X_test):
     """
@@ -23,6 +28,8 @@ def predict(self, X_test):
     Get the most frequent class of these rows
     Return the predicted class
     """
+
+    alert_logger.info(f"predict({self}, {X_test}")
 
     predictions = [] 
     for i in range(len(X_test)):
@@ -37,6 +44,8 @@ def predict(self, X_test):
         sorted_neigh_count = sorted(neigh_count.items(),    
         key=operator.itemgetter(1), reverse=True)
         predictions.append(sorted_neigh_count[0][0]) 
+
+
     return predictions
     
 def prepare_data():
